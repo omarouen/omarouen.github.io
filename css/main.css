@@ -450,16 +450,16 @@
 
 
 .skill.des .progress {
-    border:1px solid #efefef;
+    border:1px solid #222222;
 }
 
 
 .skill.dev .progress {
-    border:1px solid #cd5353;
+    border:1px solid #000000;
 }
 
 .skill.prs .progress {
-    border:1px solid #33373d;
+    border:1px solid #000000;
 }
 
 
@@ -476,17 +476,17 @@
 
 
 .skill.des .progress .percentage {
-    background-color: #efefef;
+    background-color: #5cb85c;
 }
 
 
 .skill.dev .progress .percentage {
-    background-color: #cd5353;
+    background-color: #f0ad4e;
 }
 
 
 .skill.prs .progress .percentage {
-    background-color: #33373d;
+    background-color: #5bc0de;
 }
 
 
