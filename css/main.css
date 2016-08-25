@@ -581,11 +581,13 @@
 
 
 .timeline.experience:after{
-    content: '\e8ba';
+    font-family: FontAwesome;
+    content: '\f0b1';
 }
 
 .timeline.education:after{
-    content: '\e80c';
+    font-family: FontAwesome;
+    content: '\f0b1';
 }
 
 

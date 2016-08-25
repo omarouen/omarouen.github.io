@@ -305,7 +305,7 @@ p{
     position: absolute;
     left: 15px;
     padding: 0 1px;
-    font-family: 'fontello';
+    font-family: FontAwesome;
     font-size:15px;
 }
 
@@ -315,7 +315,7 @@ p{
 }
 
 .but.opc-2.ico:before,  .but.opc-2.ico:after {
-    content: '\e800';
+    content: '\f01a';
 }
 
 
