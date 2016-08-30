@@ -3,8 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href="css/vcard.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
+<div class="vcard-template style2 ng-scope" id="rootElement" ng-controller="ComplexController">
+
+    <div class="vcard-header gradient-red-orange-bg" ng-style="getBackgroundColor();"
+         style="background: rgb(2, 136, 209);">
+        <div class="vcard-header-wrapper">
+            <div class="vcard-top-info">
+                <h4 class="top"></h4>
+
+                <div class="img" ng-show="!loadDemo &amp;&amp; view.avatar"
+                     ng-style="{'background':'url('+view.avatar+')'}"
+                     style="background: url(&quot;img/37708_1.png&quot;);"></div>
+                <h2 class="name ng-binding" ng-show="view.firstname || view.lastname">Marouen Ouerghemmi</h2>
+
+                <h2 class="name ng-binding ng-hide" ng-hide="view.firstname || view.lastname"></h2>
+                <h6 class="title ng-binding">Ingénieur développeur JAVA/JEE</h6>
+
+                <div class="add-contact-wrapper">
+                    <a class="add-contact-btn ng-hide" ng-style="{background:'#ffffff'}" ng-click="OpenPopUp('share');"
+                       style="margin-bottom: 20px; background: rgb(255, 255, 255);" ng-show="view.sharing"><i
+                            class="icon-share" style="color:#7D7D7D"></i></a>
+                    <a ng-show="loadDemo" class="add-contact-btn ng-hide" ng-click="OpenPopUp('disabled-add-button')"
+                       ng-style="{background:view.color2||'#9e9e9e'}" style="background: rgb(100, 181, 246);"><i
+                            class="icon-add-user"></i></a>
+                    <a ng-show="!loadDemo" class="add-contact-btn" ng-click="OpenPopUp('save')"
+                       ng-style="{background:view.color2||'#9e9e9e'}" style="background: rgb(100, 181, 246);"><i
+                            class="icon-add-user"></i></a>
+                </div>
+
+            </div>
+            <div class="vcard-functions"
+                 ng-show="view.numbers_mobile ||  view.numbers_phone ||  view.email || ((view.city ||view.street|| view.zip|| view.country) &amp;&amp; view.show_directions)">
+                <div class="vcard-functions-wrapper">
+                    <a href="tel:+216 53 455 630"
+                       ng-show="!loadDemo &amp;&amp; (view.numbers_mobile || view.numbers_phone)">
+                        <i class="icon-phone"></i>
+                        <small>Appeler</small>
+                    </a>
+
+                    <a href="mailto:o.marouen@gmail.com?subject=From+my+vCard&amp;body=Hey+Marouen" target="_newEmail"
+                       ng-show="!loadDemo &amp;&amp; (view.email)">
+                        <i class="icon-send"></i>
+                        <small>E-mail</small>
+                    </a>
+
+                    <a href="https://www.google.com/maps/dir/Current+Location/+Ariana+2073+Tunisie" target="_newMaps"
+                       ng-show="!loadDemo &amp;&amp; ((view.street || view.city )&amp;&amp; view.show_directions)"
+                       class="last-element">
+                        <i class="icon-map-pin"></i>
+                        <small>Itinéraire</small>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vcard-body-wrapper">
+        <div class="vcard-body">
+            <div class="vcard-row" ng-show="view.bio">
+                <h4 ng-bind-html="view.bio|nl2br" class="ng-binding">Ingénieur en génie logiciel, spécialisé dans les
+                    approches Orientée Objet, réseaux et les plateformes de développement. Familiarisé avec les phases
+                    de cycle de vie du développement d’un logiciel y compris la conception, la programmation et le
+                    test.</h4>
+            </div>
+            <div class="vcard-separator" ng-show="view.bio"></div>
+            <div class="vcard-row" ng-show="view.numbers_mobile">
+                <i class="icon icon-phone"></i>
+                <h4><a href="tel:+216 53 455 630" class="ng-binding">+216 53 455 630</a></h4>
+                <small>Mobile</small>
+            </div>
+            <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
+            <div class="vcard-row" ng-show="view.email">
+                <i class="icon icon-mail"></i>
+                <h4><a href="mailto:o.marouen@gmail.com" target="_newLink" class="ng-binding">o.marouen@gmail.com</a>
+                </h4>
+                <small>E-mail</small>
+            </div>
+            <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
+            <div class="vcard-row">
+                <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+                <i class="icon icon-skype"></i>
+                <h4>
+                    <a href="javascript://"
+                       onclick="Skype.tryAnalyzeSkypeUri('call', '0');Skype.trySkypeUri_Generic('skype:o.marouen?call', '_detectSkypeClient_1472596192370', '0'); return false;">
+                        o.marouen
+                    </a>
+                </h4>
+                <small>Skype</small>
+            </div>
+            <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
+            <div class="vcard-row" ng-show="view.street || view.zip || view.city || view.country">
+                <i class="icon icon-map-pin"></i>
+                <h4><a href="https://www.google.com/maps/dir/Current+Location/+Ariana+2073+Tunisie" target="_newMaps"
+                       ng-show="view.street || view.country || view.city || view.zip" class="ng-binding">2073 Ariana</a>
+                </h4>
+                <small ng-show="view.country" class="ng-binding">Tunisie</small>
+            </div>
+            <div class="vcard-separator" ng-show="view.numbers_mobile || view.numbers_phone"></div>
+            <div class="vcard-row">
+                <i class="icon icon-earth"></i>
+                <h4><a href="http://omarouen.github.io" target="_newLink"
+                       class="ng-binding">http://omarouen.github.io</a></h4>
+                <small>Site Internet</small>
+            </div>
+            <div class="vcard-separator"
+                 ng-show="view.bio || view.numbers_mobile || view.numbers_phone || view.email || view.street || view.zip || view.city || view.country || view.company "></div>
+            <div class="vcard-social" ng-show="view.socialmedialinks|nonEmpty" style="margin-bottom:20px;">
+                <h5>Réseaux sociaux</h5>
+                <a href="https://linkedin.com/in/marouen"><span class="icon icon-wrapper linkedin" target="_top"><i
+                        class="icon icon icon-linkedin"></i></span></a>
+                <a href="http://twitter.com/marouenOuer" target="_blank"><span class="icon icon-wrapper linkedin"
+                                                                               target="_top"><i
+                        class="icon fa fa-twitter"></i></span></a>
+                <a href="http://www.viadeo.com/p/002abadqilpdoj" target="_blank"><span
+                        class="icon icon-wrapper linkedin" target="_top"><i
+                        class="icon icon fa fa-viadeo"></i></span></a>
+                <a href="http://github.com/omarouen" target="_blank"><span class="icon icon-wrapper linkedin"
+                                                                           target="_top"><i
+                        class="icon icon fa fa-github"></i></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
