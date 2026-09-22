@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Carte de visite numérique de Marouene Ouerghemmi — coordonnées et QR code vers le profil GitHub.">
+  <title>Carte de visite — Marouene Ouerghemmi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Chargé sans defer : le thème est posé avant le premier rendu. -->
+  <script src="assets/js/theme.js"></script>
+
+  <style>
+    body {
+      background:
+        radial-gradient(60rem 40rem at 15% -10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+        radial-gradient(50rem 34rem at 110% 10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%),
+        var(--paper);
+    }
+
+    .card-topbar {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 26rem;
+      margin: 0 auto;
+      padding: 1.1rem 1.25rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: var(--accent);
+    }
+
+    /* Bootstrap n'est pas chargé sur cette page : on redéfinit un
+       bouton minimal plutôt que de dépendre de .btn/.visually-hidden. */
+    .theme-toggle {
+      flex: none;
+      width: 2.15rem;
+      height: 2.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 1;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid var(--line);
+      border-radius: .5rem;
+      background-color: var(--surface);
+      color: var(--muted);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .card-wrap {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem 2.5rem;
+    }
+
+    .id-card {
+      width: 100%;
+      max-width: 22rem;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      box-shadow: 0 1px 2px rgba(18, 26, 34, .05), 0 24px 48px -24px rgba(18, 26, 34, .35);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .id-card-cover {
+      height: 5.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-ink));
+      position: relative;
+    }
+
+    .id-card-cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, .16) 1px, transparent 1px);
+      background-size: 14px 14px;
+    }
+
+    .id-card-avatar {
+      width: 5.5rem;
+      height: 5.5rem;
+      margin: -2.75rem auto 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-ink));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Archivo", system-ui, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      border: 4px solid var(--surface);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .id-card-body {
+      padding: .85rem 1.75rem 2rem;
+    }
+
+    .id-card .name {
+      font-family: "Archivo", system-ui, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .id-card .role {
+      display: inline-block;
+      margin: .5rem 0 1.5rem;
+      padding: .3rem .75rem;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--accent-ink);
+      background-color: var(--accent-soft);
+      border-radius: 99px;
+    }
+
+    .id-card-info {
+      list-style: none;
+      margin: 0 0 1.6rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      text-align: left;
+    }
+
+    .id-card-row {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .5rem .6rem;
+      border-radius: .625rem;
+      font-size: .9rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background-color .15s ease;
+    }
+
+    a.id-card-row:hover,
+    a.id-card-row:focus-visible {
+      background-color: var(--surface-2);
+    }
+
+    .id-card-row-icon {
+      flex: none;
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: .5rem;
+      background-color: var(--accent-soft);
+      color: var(--accent-ink);
+      font-size: .9rem;
+    }
+
+    .id-card-row-value {
+      overflow-wrap: anywhere;
+      line-height: 1.25;
+    }
+
+    .id-card-divider {
+      height: 1px;
+      margin: 0 0 1.25rem;
+      background-color: var(--line);
+    }
+
+    .id-card-info i,
+    .back-link i,
+    .id-card-github i,
+    .theme-toggle i {
+      line-height: 1;
+    }
+
+    .id-card-qr {
+      display: inline-flex;
+      padding: .7rem;
+      background-color: #fff;
+      border: 1px solid var(--line);
+      border-radius: .875rem;
+      box-shadow: var(--shadow);
+      transition: border-color .15s ease;
+    }
+
+    .id-card-qr:hover,
+    .id-card-qr:focus-visible {
+      border-color: var(--accent);
+    }
+
+    .id-card-qr canvas,
+    .id-card-qr img {
+      display: block;
+      border-radius: .375rem;
+    }
+
+    @media print {
+      .card-topbar { display: none; }
+      body { background: none; }
+      .id-card { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-topbar">
+  <a class="back-link" href="index.html">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Retour au CV
+  </a>
+  <button type="button" class="theme-toggle btn-theme" aria-pressed="false" aria-label="Mode sombre">
+    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+  </button>
+</div>
+
+<div class="card-wrap">
+  <div class="id-card">
+    <div class="id-card-cover"></div>
+    <div class="id-card-avatar" aria-hidden="true">MO</div>
+
+    <div class="id-card-body">
+      <p class="name">Marouene Ouerghemmi</p>
+      <span class="role">Tech Lead / Développeur Senior Java Angular</span>
+
+      <ul class="id-card-info">
+        <li>
+          <span class="id-card-row">
+            <span class="id-card-row-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+            <span class="id-card-row-value">Bois-Colombes 92270, France</span>
+          </span>
+        </li>
+        <li>
+          <a class="id-card-row" href="tel:+33601374853">
+            <span class="id-card-row-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+            <span class="id-card-row-value">+33 6 01 37 48 53</span>
+          </a>
+        </li>
+        <li>
+          <a class="id-card-row" href="mailto:o.marouen@gmail.com">
+            <span class="id-card-row-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+            <span class="id-card-row-value">o.marouen@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a class="id-card-row" href="https://www.linkedin.com/in/marouen/" rel="noopener">
+            <span class="id-card-row-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+            <span class="id-card-row-value">linkedin.com/in/marouen</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="id-card-divider" role="separator" aria-hidden="true"></div>
+
+      <a class="id-card-qr" href="https://omarouen.github.io/" rel="noopener" aria-label="Profil GitHub">
+        <div id="qrcode"></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+<script>
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://omarouen.github.io/",
+    width: 168,
+    height: 168,
+    colorDark: "#121a22",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
