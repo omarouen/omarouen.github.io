@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV de Marouene Ouerghemmi, Tech Lead / Développeur Senior Java Angular, 11 ans d'expérience. Versions française et anglaise.">
+  <title>CV Marouene Ouerghemmi</title>
+
+  <!-- Aperçu au partage du lien. Adapter l'URL si le dépôt
+       n'est pas « omarouen.github.io » (ex. .../cv/). -->
+  <link rel="canonical" href="https://omarouen.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://omarouen.github.io/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:title" content="Marouene Ouerghemmi — Tech Lead / Développeur Senior Java Angular">
+  <meta property="og:description" content="CV de Marouene Ouerghemmi, Tech Lead / Développeur Senior Java Angular, 11 ans d'expérience. Versions française et anglaise.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Chargés sans defer : thème et palette posés avant le premier rendu. -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/palette.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#contenu" data-i18n="skip">Aller au contenu</a>
+
+<header class="site-header sticky-top">
+  <div class="container d-flex align-items-center justify-content-between gap-3 py-2">
+    <span class="header-name fw-semibold">Marouene Ouerghemmi</span>
+    <div class="d-flex align-items-center gap-3 gap-lg-4">
+      <nav class="site-nav d-none d-sm-flex align-items-center gap-3 gap-lg-4" aria-label="Sections">
+        <a href="#profil"><i class="fa-solid fa-user" aria-hidden="true"></i> <span class="nav-label" data-i18n="nav.profile">Profil</span></a>
+        <a href="#competences"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span class="nav-label" data-i18n="nav.skills">Compétences</span></a>
+        <a href="#parcours"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> <span class="nav-label" data-i18n="nav.experience">Parcours</span></a>
+        <a href="#formation"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label" data-i18n="nav.education">Formation</span></a>
+        <a href="#contact"><i class="fa-solid fa-address-card" aria-hidden="true"></i> <span class="nav-label" data-i18n="nav.contact">Contact</span></a>
+      </nav>
+      <div class="d-flex align-items-center gap-2">
+        <div class="lang-switch d-flex align-items-center gap-2">
+          <i class="fa-solid fa-globe lang-icon" aria-hidden="true"></i>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Langue / Language">
+            <button type="button" class="btn btn-lang active" data-lang="fr" aria-pressed="true">FR</button>
+            <button type="button" class="btn btn-lang" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-sm btn-theme" aria-pressed="false">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          <span class="visually-hidden" data-i18n="theme.label">Mode sombre</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-palette" aria-pressed="false">
+          <i class="fa-solid fa-eye-low-vision" aria-hidden="true"></i>
+          <span class="visually-hidden" data-i18n="palette.label">Mode daltonien</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="contenu" class="container py-4 py-lg-5">
+
+  <!-- Identité ------------------------------------------------ -->
+  <div class="identity mb-5">
+    <p class="eyebrow mb-2">
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+      <span data-i18n="hero.address">Bois-Colombes 92270</span>
+    </p>
+    <h1>Marouene Ouerghemmi</h1>
+    <p class="role mb-3" data-i18n="hero.role">Tech Lead / Développeur Senior Java Angular</p>
+    <ul class="facts list-unstyled d-flex flex-wrap gap-3 mb-4">
+      <li><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="hero.fact1">11 ans d'expérience</span></li>
+      <li><i class="fa-solid fa-code" aria-hidden="true"></i> <span data-i18n="hero.fact2">Java &amp; Angular</span></li>
+      <li><i class="fa-solid fa-language" aria-hidden="true"></i> <span data-i18n="hero.fact3">Anglais courant</span></li>
+    </ul>
+    <div class="d-flex flex-wrap gap-2">
+      <a class="btn btn-contact" href="#contact">
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+        <span data-i18n="hero.cta">Me contacter</span>
+      </a>
+      <a class="btn btn-download" href="assets/cv-marouene-ouerghemmi.pdf"
+         download="CV-Marouene-Ouerghemmi.pdf" type="application/pdf">
+        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+        <span data-i18n="hero.download">Télécharger le CV (PDF)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Profil -------------------------------------------------- -->
+  <section id="profil" class="section" aria-labelledby="titre-profil">
+    <div class="section-head">
+      <h2 id="titre-profil">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span data-i18n="sec.profile">Profil</span>
+      </h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <p class="prose mb-0" data-i18n="profile.text">
+          Tech Lead / Consultant Full Stack Java &amp; Angular avec 11 ans d'expérience, spécialisé dans la conception
+          d'architectures REST, le développement d'applications critiques (assurance-crédit, gestion multicanale de la
+          relation client) et l'accompagnement technique d'équipes de développement. Expérience confirmée en pilotage
+          technique, mentoring et amélioration continue de la qualité logicielle (Clean Code, tests automatisés,
+          réduction de dette technique). À l'aise dans des environnements internationaux et en méthodologie Agile Scrum.
+        </p>
+      </div>
+      <div class="col-lg-4">
+        <p class="eyebrow mb-2">
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
+          <span data-i18n="profile.keywords">Expertise clé</span>
+        </p>
+        <ul class="chip-list">
+          <li class="chip chip-accent">Java 8/17/21</li>
+          <li class="chip chip-accent">Spring Boot</li>
+          <li class="chip chip-accent">Angular 18</li>
+          <li class="chip chip-accent">API REST</li>
+          <li class="chip chip-accent"><span data-i18n="chip.hexa">Architecture hexagonale</span></li>
+          <li class="chip chip-accent">CI/CD</li>
+          <li class="chip chip-accent">Agile Scrum</li>
+          <li class="chip chip-accent">Clean Code</li>
+          <li class="chip chip-accent">Mentoring</li>
+          <li class="chip chip-accent">SonarQube</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences --------------------------------------------- -->
+  <section id="competences" class="section" aria-labelledby="titre-competences">
+    <div class="section-head">
+      <h2 id="titre-competences">
+        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+        <span data-i18n="sec.skills">Domaines de compétences</span>
+      </h2>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-code" aria-hidden="true"></i>
+          <span data-i18n="skills.lang">Langages &amp; frameworks</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">Java</li>
+          <li class="chip">Spring Framework</li>
+          <li class="chip">Spring Boot</li>
+          <li class="chip">Spring Security</li>
+          <li class="chip">Spring Batch</li>
+          <li class="chip">Spring Data</li>
+          <li class="chip">Spring MVC</li>
+          <li class="chip">Hibernate</li>
+          <li class="chip">Angular</li>
+          <li class="chip">AngularJS</li>
+          <li class="chip">TypeScript</li>
+          <li class="chip">Bootstrap</li>
+          <li class="chip">CSS</li>
+          <li class="chip">SQL</li>
+          <li class="chip">Swagger</li>
+          <li class="chip">Kafka</li>
+          <li class="chip">JMS</li>
+          <li class="chip">JUnit</li>
+          <li class="chip">Mockito</li>
+          <li class="chip">Gravitee API Gateway</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-database" aria-hidden="true"></i>
+          <span data-i18n="skills.db">Bases de données</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">PostgreSQL</li>
+          <li class="chip">Oracle</li>
+          <li class="chip">MySQL</li>
+          <li class="chip">Cassandra</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+          <span data-i18n="skills.devops">DevOps</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">Git</li>
+          <li class="chip">GitLab</li>
+          <li class="chip">Jenkins</li>
+          <li class="chip">Maven</li>
+          <li class="chip">Nexus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+          <span data-i18n="skills.method">Méthodologies</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">Scrum</li>
+          <li class="chip">Agile</li>
+          <li class="chip">TDD</li>
+          <li class="chip">DDD</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+          <span data-i18n="skills.tools">Outils</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">Jira</li>
+          <li class="chip">SonarQube</li>
+          <li class="chip">Confluence</li>
+          <li class="chip">IntelliJ IDEA</li>
+          <li class="chip">Eclipse</li>
+          <li class="chip">VS Code</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-row row g-2 align-items-baseline">
+      <div class="col-md-3">
+        <span class="skill-label">
+          <i class="fa-solid fa-server" aria-hidden="true"></i>
+          <span data-i18n="skills.servers">Serveurs &amp; environnements</span>
+        </span>
+      </div>
+      <div class="col-md-9">
+        <ul class="chip-list">
+          <li class="chip">Tomcat</li>
+          <li class="chip">WebLogic</li>
+          <li class="chip">Linux</li>
+          <li class="chip">Windows</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours ------------------------------------------------ -->
+  <section id="parcours" class="section" aria-labelledby="titre-parcours">
+    <div class="section-head">
+      <h2 id="titre-parcours">
+        <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+        <span data-i18n="sec.xp">Parcours professionnel</span>
+      </h2>
+    </div>
+
+    <ol class="timeline">
+
+      <!-- Coface -->
+      <li class="xp xp-current">
+        <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2">
+          <h3><i class="fa-solid fa-building" aria-hidden="true"></i> Coface</h3>
+          <time datetime="2018-07/2026-07" data-i18n="coface.dates">Juillet 2018 — Juillet 2026</time>
+        </div>
+        <p class="role-line" data-i18n="coface.role">Tech Lead / Développeur Full Stack Java/Angular</p>
+        <p class="prose" data-i18n="coface.ctx">
+          Développement d'une application groupe de gestion des contrats d'assurance-crédit, déployée dans l'ensemble
+          des filiales Coface à l'international (Agile Scrum, sprints de 2 semaines, mise en production toutes les
+          3 itérations). Équipe internationale d'environ 60 collaborateurs, dont 20 développeurs répartis en plusieurs
+          squads, en collaboration avec Product Owners, Business Analysts, QA et Architectes, et avec les équipes
+          Infrastructure/DevOps basées en Roumanie.
+        </p>
+
+        <article class="mission">
+          <h4>
+            <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+            <span data-i18n="coface.m1.title">Mission : Tech Lead Full Stack Java/Angular</span>
+          </h4>
+          <p class="prose mb-0" data-i18n="coface.m1.intro">
+            Tech Lead au sein d'une équipe de 20 développeurs répartis sur plusieurs projets menés en parallèle, avec un
+            rôle transverse alliant leadership technique, mentoring et suivi RH des collaborateurs.
+          </p>
+
+          <h5><i class="fa-solid fa-sitemap" aria-hidden="true"></i> <span data-i18n="coface.m1.h1">Pilotage technique &amp; architecture</span></h5>
+          <ul class="task-list">
+            <li data-i18n="coface.m1.h1.b1">Pilotage technique de plusieurs équipes de développement Java/Angular en garantissant la cohérence des choix d'architecture et la qualité des livrables.</li>
+            <li data-i18n="coface.m1.h1.b2">Définition et diffusion des bonnes pratiques de développement (Clean Code, SOLID, architecture hexagonale, revues de code, conventions de développement).</li>
+            <li data-i18n="coface.m1.h1.b3">Accompagnement et montée en compétences des développeurs via le mentoring, le pair programming et les revues de code.</li>
+            <li data-i18n="coface.m1.h1.b4">Arbitrage des choix techniques et validation des solutions proposées en collaboration avec les architectes.</li>
+            <li data-i18n="coface.m1.h1.b5">Conception et validation des API REST (versioning, rétrocompatibilité, sécurité, documentation OpenAPI/Swagger).</li>
+            <li data-i18n="coface.m1.h1.b6">Participation aux ateliers de cadrage avec les équipes métier afin de préciser les besoins fonctionnels et réaliser les macro-estimations de charge.</li>
+          </ul>
+
+          <h5><i class="fa-solid fa-users-gear" aria-hidden="true"></i> <span data-i18n="coface.m1.h2">Mentoring, recrutement &amp; suivi qualité</span></h5>
+          <ul class="task-list">
+            <li data-i18n="coface.m1.h2.b1">Participation aux recrutements techniques (Java, Spring Boot, Angular) et évaluation des compétences des candidats.</li>
+            <li data-i18n="coface.m1.h2.b2">Suivi technique et accompagnement des collaborateurs lors des points de mission afin d'identifier les axes de progression et les besoins en formation.</li>
+            <li data-i18n="coface.m1.h2.b3">Supervision de la qualité du code à l'aide de SonarQube et suivi des indicateurs de qualité et de dette technique.</li>
+            <li data-i18n="coface.m1.h2.b4">Rédaction de documentation technique et partage des connaissances auprès des équipes.</li>
+            <li data-i18n="coface.m1.h2.b5">Collaboration avec les équipes DevOps pour accompagner les déploiements et l'amélioration des processus d'intégration et de livraison continues (CI/CD).</li>
+          </ul>
+
+          <h5><i class="fa-solid fa-plug-circle-check" aria-hidden="true"></i> <span data-i18n="coface.m1.h3">Conception d'API &amp; architecture d'entreprise</span></h5>
+          <ul class="task-list">
+            <li data-i18n="coface.m1.h3.b1">Participation aux ateliers de conception avec les équipes projets afin de définir les contrats d'API REST consommés par l'application ou exposés aux autres applications du SI Coface.</li>
+            <li data-i18n="coface.m1.h3.b2">Élaboration de diagrammes d'architecture et de séquence (UML, diagrammes de flux) pour formaliser les échanges entre applications et faciliter les revues de conception.</li>
+            <li data-i18n="coface.m1.h3.b3">Coordination avec les équipes consommatrices et les équipes exposant les services afin d'assurer une intégration fluide des API et la résolution des problématiques d'interopérabilité.</li>
+          </ul>
+        </article>
+
+        <article class="mission">
+          <h4>
+            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+            <span data-i18n="coface.m2.title">Mission : Développeur Full Stack Java/Angular</span>
+          </h4>
+          <p class="prose" data-i18n="coface.m2.intro">
+            Développeur Full Stack au sein d'une équipe Agile de 8 développeurs. Modernisation du système d'information
+            via la migration des applications vers les dernières versions des frameworks Java et Angular, le
+            développement de nouvelles fonctionnalités et l'amélioration continue de la qualité, de la sécurité et de la
+            maintenabilité.
+          </p>
+
+          <h5><i class="fa-solid fa-chart-line" aria-hidden="true"></i> <span data-i18n="coface.m2.results">Résultats mesurés</span></h5>
+          <div class="row g-2 g-sm-3">
+            <div class="col-sm-4">
+              <div class="metric">
+                <i class="fa-solid fa-vial-circle-check metric-icon" aria-hidden="true"></i>
+                <span class="metric-value">15 %<span class="to">→</span><span class="after">85 %</span></span>
+                <span class="metric-label" data-i18n="metric.coverage">Couverture de tests</span>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="metric">
+                <i class="fa-solid fa-shield-halved metric-icon" aria-hidden="true"></i>
+                <span class="metric-value">80<span class="to">→</span><span class="after">0</span></span>
+                <span class="metric-label" data-i18n="metric.vuln">Vulnérabilités SonarQube</span>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="metric">
+                <i class="fa-solid fa-bug-slash metric-icon" aria-hidden="true"></i>
+                <span class="metric-value">1200<span class="to">→</span><span class="after">0</span></span>
+                <span class="metric-label" data-i18n="metric.reliability">Problèmes de fiabilité</span>
+              </div>
+            </div>
+          </div>
+
+          <h5><i class="fa-solid fa-list-check" aria-hidden="true"></i> <span data-i18n="coface.m2.ach">Réalisations</span></h5>
+          <ul class="task-list">
+            <li data-i18n="coface.m2.b1">Conception et développement de nouvelles fonctionnalités en Java 8/17/21, Spring Boot et Angular 18.</li>
+            <li data-i18n="coface.m2.b2">Migration des applications vers Spring Boot et des interfaces AngularJS vers Angular 18.</li>
+            <li data-i18n="coface.m2.b3">Migration de Bootstrap 3 vers Bootstrap 4.</li>
+            <li data-i18n="coface.m2.b4">Développement et consommation d'API REST.</li>
+            <li data-i18n="coface.m2.b5">Refactoring des applications en appliquant les principes de l'architecture hexagonale.</li>
+            <li data-i18n="coface.m2.b6">Mise en place et amélioration des tests unitaires (JUnit 5, Mockito) et des tests d'intégration.</li>
+            <li data-i18n="coface.m2.b7">Amélioration continue de la qualité du code à l'aide de SonarQube (réduction de la dette technique, correction des code smells et vulnérabilités).</li>
+            <li data-i18n="coface.m2.b8">Participation aux revues de code, aux cérémonies Scrum et aux activités de maintenance évolutive et corrective.</li>
+            <li data-i18n="coface.m2.b9">Gestion du code source avec Git et intégration des développements via une chaîne CI/CD.</li>
+          </ul>
+        </article>
+
+        <p class="eyebrow mt-4 mb-2">
+          <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          <span data-i18n="label.techenv">Environnement technique</span>
+        </p>
+        <ul class="chip-list">
+          <li class="chip">Java 8 / 17 / 21</li>
+          <li class="chip">Spring Boot 2.7</li>
+          <li class="chip">REST</li>
+          <li class="chip">JPA</li>
+          <li class="chip">Spring Security</li>
+          <li class="chip">Cache</li>
+          <li class="chip">Cucumber</li>
+          <li class="chip">RSocket</li>
+          <li class="chip">WebFlux</li>
+          <li class="chip">Actuator</li>
+          <li class="chip">Spring Batch</li>
+          <li class="chip">Angular 18</li>
+          <li class="chip">SonarQube</li>
+          <li class="chip">JUnit</li>
+          <li class="chip">Oracle</li>
+          <li class="chip">SQL / PL-SQL</li>
+          <li class="chip">WebLogic 12</li>
+          <li class="chip">Jenkins</li>
+          <li class="chip">Git / GitLab</li>
+          <li class="chip">TDD</li>
+          <li class="chip">DDD</li>
+          <li class="chip">Jira</li>
+          <li class="chip">Confluence</li>
+          <li class="chip">IntelliJ IDEA</li>
+          <li class="chip">Maven 3</li>
+        </ul>
+        <p class="facts mt-2 mb-0">
+          <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
+          <span data-i18n="label.funcenv">Environnement fonctionnel : assurance-crédit</span>
+        </p>
+      </li>
+
+      <!-- AID -->
+      <li class="xp">
+        <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2">
+          <h3><i class="fa-solid fa-building" aria-hidden="true"></i> AID</h3>
+          <time datetime="2017-09/2018-06" data-i18n="aid.dates">Septembre 2017 — Juin 2018</time>
+        </div>
+        <p class="role-line" data-i18n="aid.role">Développeur Java / AngularJS</p>
+        <p class="prose" data-i18n="aid.ctx">
+          Au sein d'une équipe de 6 personnes en Agile/Scrum, développement et restructuration de datakili, une
+          application d'analyse des comportements clients et de gestion des parcours clients multicanaux.
+        </p>
+        <ul class="task-list">
+          <li data-i18n="aid.b1">Développement de nouvelles fonctionnalités.</li>
+          <li data-i18n="aid.b2">Tests unitaires en TDD (test first), Cucumber et tests d'intégration.</li>
+          <li data-i18n="aid.b3">Remplacement de Cassandra par MySQL et configuration multi-tenante de l'application.</li>
+          <li data-i18n="aid.b4">Migration vers Spring Boot 2.</li>
+          <li data-i18n="aid.b5">Amélioration de la partie frontend (AngularJS).</li>
+          <li data-i18n="aid.b6">Remplacement de Jobserver par Livy pour interagir avec Spark via des services REST.</li>
+        </ul>
+        <p class="eyebrow mt-3 mb-2">
+          <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          <span data-i18n="label.techenv">Environnement technique</span>
+        </p>
+        <ul class="chip-list">
+          <li class="chip">Java</li>
+          <li class="chip">Spring Framework</li>
+          <li class="chip">AngularJS</li>
+          <li class="chip">JPA / Hibernate</li>
+          <li class="chip">Scala</li>
+          <li class="chip">Spark</li>
+          <li class="chip">Hadoop</li>
+          <li class="chip">MySQL</li>
+          <li class="chip">Cassandra</li>
+          <li class="chip">Git</li>
+          <li class="chip">Maven</li>
+          <li class="chip">JUnit</li>
+          <li class="chip">Cucumber</li>
+          <li class="chip">Mockito</li>
+          <li class="chip">Jenkins</li>
+          <li class="chip">Docker</li>
+        </ul>
+      </li>
+
+      <!-- Vialink -->
+      <li class="xp">
+        <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2">
+          <h3><i class="fa-solid fa-building" aria-hidden="true"></i> Vialink</h3>
+          <time datetime="2017-02/2017-09" data-i18n="vialink.dates">Février 2017 — Septembre 2017</time>
+        </div>
+        <p class="role-line" data-i18n="vialink.role">Développeur Java / Angular 2</p>
+        <p class="prose" data-i18n="vialink.ctx">
+          Au sein d'une équipe de 7 personnes répartie entre la France et la Thaïlande, en Agile/Scrum, développement et
+          modernisation d'une application de signature électronique de documents.
+        </p>
+        <ul class="task-list">
+          <li data-i18n="vialink.b1">Revue du code des autres membres de l'équipe.</li>
+          <li data-i18n="vialink.b2">Contrôle des normes de qualité de code et optimisation des performances.</li>
+          <li data-i18n="vialink.b3">Amélioration de la couverture de code via les tests unitaires et d'intégration.</li>
+          <li data-i18n="vialink.b4">Migration de Java 6 vers Java 8.</li>
+        </ul>
+      </li>
+
+      <!-- B2M -->
+      <li class="xp">
+        <div class="d-flex flex-wrap align-items-baseline justify-content-between gap-2">
+          <h3><i class="fa-solid fa-building" aria-hidden="true"></i> B2M</h3>
+          <time datetime="2015-07/2017-02" data-i18n="b2m.dates">Juillet 2015 — Février 2017</time>
+        </div>
+        <p class="role-line" data-i18n="b2m.role">Ingénieur d'études et de développement Java / AngularJS</p>
+        <p class="prose" data-i18n="b2m.ctx">
+          Au sein d'une équipe de 8 personnes répartie entre la Tunisie et la France, en Agile/Scrum, développement du
+          progiciel Solis-paiement, qui coordonne l'accueil, la gestion et le suivi des dossiers au sein des Maisons
+          Départementales des Personnes Handicapées (MDPH).
+        </p>
+        <ul class="task-list">
+          <li data-i18n="b2m.b1">Participation à la création de l'architecture back-end et front-end de l'application.</li>
+          <li data-i18n="b2m.b2">Revue du code des autres membres de l'équipe.</li>
+          <li data-i18n="b2m.b3">Développement de nouvelles fonctionnalités.</li>
+        </ul>
+        <p class="prose mt-3" data-i18n="b2m.ctx2">
+          Au sein d'une équipe de 4 personnes, développement d'une application de gestion pour petites entreprises
+          commerciales (stock, achat, vente, caisse).
+        </p>
+        <ul class="task-list">
+          <li data-i18n="b2m.b4">Création de l'architecture (Spring Framework pour le back-end, AngularJS pour le front-end).</li>
+          <li data-i18n="b2m.b5">Développement des fonctionnalités.</li>
+          <li data-i18n="b2m.b6">Contrôle des normes de qualité de code et optimisation des performances.</li>
+        </ul>
+        <p class="eyebrow mt-3 mb-2">
+          <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          <span data-i18n="label.techenv">Environnement technique</span>
+        </p>
+        <ul class="chip-list">
+          <li class="chip">Spring Framework</li>
+          <li class="chip">Hibernate</li>
+          <li class="chip">Maven</li>
+          <li class="chip">AngularJS</li>
+          <li class="chip">Bower</li>
+          <li class="chip">Grunt</li>
+          <li class="chip">PostgreSQL</li>
+          <li class="chip">Git</li>
+          <li class="chip">Jira</li>
+          <li class="chip">Jenkins</li>
+          <li class="chip">IntelliJ IDEA</li>
+          <li class="chip">WebStorm</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Formation ----------------------------------------------- -->
+  <section id="formation" class="section" aria-labelledby="titre-formation">
+    <div class="section-head">
+      <h2 id="titre-formation">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+        <span data-i18n="sec.edu">Formation &amp; langues</span>
+      </h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-8">
+        <div class="edu h-100">
+          <i class="fa-solid fa-graduation-cap edu-icon" aria-hidden="true"></i>
+          <time datetime="2015" class="fw-semibold">2015</time>
+          <span data-i18n="edu.degree">Diplôme d'ingénieur en informatique, spécialité génie logiciel</span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="edu h-100">
+          <i class="fa-solid fa-language edu-icon" aria-hidden="true"></i>
+          <span class="skill-label" data-i18n="edu.lang">Anglais</span>
+          <span data-i18n="edu.level">Courant</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -------------------------------------------------- -->
+  <section id="contact" class="section" aria-labelledby="titre-contact">
+    <div class="section-head">
+      <h2 id="titre-contact">
+        <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+        <span data-i18n="sec.contact">Contact</span>
+      </h2>
+    </div>
+    <address class="row g-3 mb-0">
+      <div class="col-md-6 col-lg-3">
+        <div class="contact-card">
+          <i class="fa-solid fa-location-dot contact-icon" aria-hidden="true"></i>
+          <span class="contact-label" data-i18n="contact.address">Adresse</span>
+          <span class="contact-value">Bois-Colombes 92270</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a class="contact-card" href="mailto:o.marouen@gmail.com">
+          <i class="fa-solid fa-envelope contact-icon" aria-hidden="true"></i>
+          <span class="contact-label" data-i18n="contact.email">Email</span>
+          <span class="contact-value">o.marouen@gmail.com</span>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a class="contact-card" href="tel:+33601374853">
+          <i class="fa-solid fa-phone contact-icon" aria-hidden="true"></i>
+          <span class="contact-label" data-i18n="contact.phone">Téléphone</span>
+          <span class="contact-value">06 01 37 48 53</span>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a class="contact-card" href="https://www.linkedin.com/in/marouen/" rel="noopener">
+          <i class="fa-brands fa-linkedin-in contact-icon" aria-hidden="true"></i>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/marouen</span>
+        </a>
+      </div>
+    </address>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container py-4 d-flex flex-wrap justify-content-between gap-2">
+    <span>Marouene Ouerghemmi — <span data-i18n="hero.role">Tech Lead / Développeur Senior Java Angular</span></span>
+    <a href="mailto:o.marouen@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> o.marouen@gmail.com</a>
+  </div>
+</footer>
+
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>

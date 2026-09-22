@@ -1,0 +1,727 @@
+/* ===========================================================
+   Thème — tokens définis d'abord en clair sur :root,
+   redéfinis pour le sombre (système puis choix explicite).
+   Les composants ne consomment que des tokens.
+   =========================================================== */
+:root {
+  color-scheme: light;
+  --paper: #f4f6f8;
+  --surface: #ffffff;
+  --surface-2: #eaeff3;
+  --ink: #121a22;
+  --muted: #5a6b7a;
+  --line: #d9e0e6;
+  --accent: #12657f;
+  --accent-ink: #0b4a5e;
+  --accent-soft: #e2eef3;
+  --pass: #2e7d50;
+  --shadow: 0 1px 2px rgba(18, 26, 34, .05), 0 10px 26px -18px rgba(18, 26, 34, .45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0e151b;
+    --surface: #151e26;
+    --surface-2: #1b2731;
+    --ink: #e7edf2;
+    --muted: #9aaab8;
+    --line: #2a3742;
+    --accent: #58b9d6;
+    --accent-ink: #8ad5e8;
+    --accent-soft: #16313d;
+    --pass: #61bb8c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 30px -18px rgba(0, 0, 0, .8);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e151b;
+  --surface: #151e26;
+  --surface-2: #1b2731;
+  --ink: #e7edf2;
+  --muted: #9aaab8;
+  --line: #2a3742;
+  --accent: #58b9d6;
+  --accent-ink: #8ad5e8;
+  --accent-soft: #16313d;
+  --pass: #61bb8c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 30px -18px rgba(0, 0, 0, .8);
+}
+
+/* -----------------------------------------------------------
+   Mode daltonien — axe indépendant du clair/sombre.
+   Le couple bleu pétrole / vert de la palette standard est mal
+   discriminé en deutéranopie et en protanopie (les deux formes
+   les plus courantes). On le remplace par un axe bleu / orange
+   inspiré de la palette Okabe-Ito, distinguable pour tous les
+   types de daltonisme et différencié même en niveaux de gris.
+   Les neutres ne changent pas : ils ne portent aucun sens.
+   Ces blocs suivent ceux du thème pour gagner en cascade.
+   ----------------------------------------------------------- */
+:root[data-palette="daltonien"] {
+  --accent: #0072b2;      /* bleu franc, 4,9:1 sur le fond clair */
+  --accent-ink: #005285;
+  --accent-soft: #e1eff7;
+  --pass: #a64500;        /* vermillon assombri, 5,6:1 sur le fond clair */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="daltonien"]:not([data-theme="light"]) {
+    --accent: #56b4e9;
+    --accent-ink: #8acbf0;
+    --accent-soft: #0e2a3d;
+    --pass: #e69f00;      /* orange, 8,3:1 sur le fond sombre */
+  }
+}
+
+:root[data-palette="daltonien"][data-theme="dark"] {
+  --accent: #56b4e9;
+  --accent-ink: #8acbf0;
+  --accent-soft: #0e2a3d;
+  --pass: #e69f00;
+}
+
+/* -----------------------------------------------------------
+   Bonne pratique Bootstrap 5.3 : on personnalise via les
+   variables CSS natives (--bs-*) plutôt qu'en surchargeant
+   les règles du framework à coups de !important.
+   La règle couvre les 3 états de data-bs-theme.
+   ----------------------------------------------------------- */
+:root,
+:root[data-bs-theme="light"],
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: var(--paper);
+  --bs-body-color: var(--ink);
+  --bs-emphasis-color: var(--ink);
+  --bs-heading-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-tertiary-bg: var(--surface-2);
+  --bs-border-color: var(--line);
+  --bs-border-radius: .5rem;
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--accent-ink);
+  --bs-primary: var(--accent);
+  --bs-body-font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bs-body-font-size: 1.0625rem;
+  --bs-body-line-height: 1.65;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--bs-body-font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Les cibles d'ancre ne doivent pas passer sous l'en-tête collante. */
+section[id],
+#contact,
+#contenu {
+  scroll-margin-top: 5rem;
+}
+
+/* Typographie ---------------------------------------------- */
+h1, h2, h3, h4, h5 {
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+
+.mono,
+.chip,
+time,
+.metric-value,
+.skill-label {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.prose {
+  max-width: 68ch;
+  color: var(--ink);
+}
+
+a {
+  text-underline-offset: .18em;
+  transition: color .15s ease;
+}
+
+a:focus-visible,
+.skip-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: .25rem;
+}
+
+/* En-tête collante ------------------------------------------ */
+.site-header {
+  top: env(safe-area-inset-top, 0px);
+  background-color: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1020;
+}
+
+.site-header a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+.site-header a:hover,
+.site-header a:focus-visible {
+  color: var(--accent);
+}
+
+/* Le nom ne doit jamais passer sur deux lignes : il se tronque. */
+.header-name {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .95rem;
+}
+
+@media (min-width: 576px) {
+  .header-name {
+    font-size: 1rem;
+  }
+}
+
+/* Navigation : icônes seules jusqu'à lg, icône + libellé au-delà.
+   Le libellé reste lu par les lecteurs d'écran dans les deux cas. */
+@media (max-width: 991.98px) {
+  .nav-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .site-nav a i {
+    font-size: 1.05rem;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+
+.skip-link:focus {
+  position: static;
+  display: inline-block;
+  margin: .5rem;
+  padding: .4rem .75rem;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Identité --------------------------------------------------- */
+.identity h1 {
+  font-size: clamp(2rem, 1.35rem + 2.6vw, 3.1rem);
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+.identity .role {
+  font-size: clamp(1.05rem, .95rem + .5vw, 1.3rem);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.facts {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Pas de séparateur « · » entre les faits : chacun porte son icône,
+   et un séparateur se retrouverait en début de ligne après un retour
+   à la ligne sur mobile. */
+
+/* Icônes Font Awesome ---------------------------------------- */
+.eyebrow i,
+.facts i,
+.skill-label i,
+.section-head i,
+.mission h4 i,
+.mission h5 i,
+.xp h3 i {
+  color: var(--accent);
+  margin-right: .4em;
+}
+
+.section-head i {
+  font-size: .85em;
+}
+
+.xp h3 i {
+  font-size: .8em;
+}
+
+/* Bouton « Me contacter » ------------------------------------ */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: .5rem;
+  background-color: var(--accent);
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-contact:hover,
+.btn-contact:focus-visible {
+  background-color: var(--accent-ink);
+  border-color: var(--accent-ink);
+  color: var(--paper);
+}
+
+/* Téléchargement du CV (version PDF) --------------------------- */
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .55rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background-color: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-download i {
+  color: var(--accent);
+}
+
+.btn-download:hover,
+.btn-download:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Sélecteur de langue ---------------------------------------- */
+/* L'icône vit à côté du groupe de boutons, pas dans le bouton FR :
+   les deux langues restent ainsi strictement symétriques. */
+.lang-icon {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.btn-lang {
+  --bs-btn-color: var(--muted);
+  --bs-btn-border-color: var(--line);
+  --bs-btn-bg: var(--surface);
+  --bs-btn-hover-color: var(--accent);
+  --bs-btn-hover-bg: var(--surface);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-active-color: var(--paper);
+  --bs-btn-active-bg: var(--accent);
+  --bs-btn-active-border-color: var(--accent);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .78rem;
+  letter-spacing: .04em;
+}
+
+.btn-lang.active {
+  color: var(--paper);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Boutons d'apparence : clair/sombre et mode daltonien ---------- */
+.btn-theme,
+.btn-palette {
+  --bs-btn-color: var(--muted);
+  --bs-btn-border-color: var(--line);
+  --bs-btn-bg: var(--surface);
+  --bs-btn-hover-color: var(--accent);
+  --bs-btn-hover-bg: var(--surface);
+  --bs-btn-hover-border-color: var(--accent);
+  width: 2.15rem;
+  height: 2.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+  background-color: var(--surface);
+  color: var(--muted);
+}
+
+.btn-theme:hover,
+.btn-theme:focus-visible,
+.btn-palette:hover,
+.btn-palette:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Le mode daltonien est un état activable : il se voit. */
+.btn-palette.active {
+  color: var(--paper);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Cartes de contact ------------------------------------------ */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  height: 100%;
+  padding: 1.1rem 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-style: normal;
+  box-shadow: var(--shadow);
+}
+
+a.contact-card:hover,
+a.contact-card:focus-visible {
+  border-color: var(--accent);
+}
+
+.contact-icon {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: .35rem;
+}
+
+.contact-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-value {
+  font-size: .98rem;
+  overflow-wrap: anywhere;
+}
+
+a.contact-card .contact-value {
+  color: var(--accent);
+}
+
+/* Titres de section ------------------------------------------ */
+.section + .section {
+  margin-top: 3.25rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-head h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  min-width: 0;
+}
+
+/* Le titre ne reste sur une seule ligne que s'il y a la place :
+   en dessous, il passe à la ligne plutôt que de déborder. */
+@media (min-width: 576px) {
+  .section-head h2 {
+    white-space: nowrap;
+  }
+}
+
+.section-head::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: var(--line);
+}
+
+/* Tags techniques -------------------------------------------- */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-block;
+  padding: .2rem .55rem;
+  font-size: .78rem;
+  line-height: 1.5;
+  color: var(--muted);
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .375rem;
+}
+
+.chip-accent {
+  color: var(--accent-ink);
+  background-color: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+/* Compétences ------------------------------------------------ */
+.skill-row {
+  padding-block: .9rem;
+  border-top: 1px solid var(--line);
+}
+
+.skill-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-label {
+  font-size: .8rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Parcours (timeline) ---------------------------------------- */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xp {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-bottom: 2.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.xp:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.xp::before {
+  content: "";
+  position: absolute;
+  left: -4.5px;
+  top: .55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.xp-current::before {
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.xp h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.xp time {
+  font-size: .82rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.xp .role-line {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.mission {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+  box-shadow: var(--shadow);
+}
+
+.mission h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 .5rem;
+}
+
+.mission h5 {
+  font-size: .82rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.25rem 0 .5rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.task-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.task-list li {
+  position: relative;
+  margin-bottom: .4rem;
+  padding-left: 1.4rem;
+}
+
+/* Puces dessinées avec une icône Font Awesome */
+.task-list li::before {
+  content: "\f105"; /* fa-angle-right */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: .15rem;
+  top: .05rem;
+  font-size: .9em;
+  color: var(--accent);
+}
+
+/* Métriques -------------------------------------------------- */
+.metric {
+  padding: .85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background-color: var(--surface-2);
+  height: 100%;
+}
+
+.metric-icon {
+  color: var(--pass);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: .35rem;
+}
+
+.metric-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+}
+
+.metric-value .to {
+  color: var(--muted);
+  margin: 0 .3rem;
+}
+
+.metric-value .after {
+  color: var(--pass);
+  font-weight: 500;
+}
+
+.metric-label {
+  font-size: .8rem;
+  color: var(--muted);
+  display: block;
+  margin-top: .15rem;
+}
+
+/* Formation & pied de page ----------------------------------- */
+.edu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem 1.25rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .625rem;
+}
+
+.edu-icon {
+  color: var(--accent);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Impression : le CV doit sortir proprement en A4 ------------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+  }
+
+  .mission,
+  .edu,
+  .metric,
+  .contact-card,
+  .chip {
+    box-shadow: none;
+    background: #fff;
+    border-color: #bbb;
+  }
+
+  .lang-switch,
+  .btn-theme,
+  .btn-palette,
+  .btn-contact,
+  .btn-download {
+    display: none !important;
+  }
+
+  .xp,
+  .mission,
+  .edu {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
